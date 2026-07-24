@@ -88,7 +88,7 @@ public class Tablero {
     }
 
     public boolean compararCartas(Carta carta1, Carta carta2) {
-        return carta1.getImagen().equals(carta2.getImagen());
+        return carta1.getSimbolo().equals(carta2.getSimbolo());
     }
  
     public boolean verificarFinDelJuego() {
