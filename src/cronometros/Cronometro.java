@@ -23,6 +23,7 @@ public class Cronometro {
             }
         });
     }
+    
 
     public void iniciar() {
         timer.start();
@@ -37,7 +38,7 @@ public class Cronometro {
         contador = 0;
     }
 
-    public String obtenerTiempoTranscurrido() {
+    public String getTiempoTranscurrido() {
         int minutos = contador / 60;
         int segundos = contador % 60;
         return String.format("%02d:%02d", minutos, segundos);
