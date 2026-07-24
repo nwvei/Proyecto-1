@@ -9,9 +9,9 @@ package cartas;
  * @author HP
  */
 public enum Nivel {
-    PRINCIPIANTE(8, 4, 4),
-    INTERMEDIO(16, 4, 8),
-    AVANZADO(32, 8, 8);  
+    PRINCIPIANTE(16, 8, 8),
+    INTERMEDIO(32, 16, 16),
+    AVANZADO(64, 32, 32);  
 
     private final int cantidadParejas;
     private final int filas;
@@ -37,19 +37,5 @@ public enum Nivel {
 
     public int getColumnas() {
         return columnas;
-    }
-
-    @Override
-    public String toString() {
-        switch (this) {
-            case PRINCIPIANTE:
-                return "Principiante (8 parejas)";
-            case INTERMEDIO:
-                return "Intermedio (16 parejas)";
-            case AVANZADO:
-                return "Avanzado (32 parejas)";
-            default:
-                return name();
-        }
     }
 }
