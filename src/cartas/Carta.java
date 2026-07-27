@@ -9,12 +9,12 @@ package cartas;
  * @author HP
  */
 public class Carta {
-   private String simbolo;      
+   private int ids;      
     private boolean visible;     
     private boolean encontrada;  
 
-    public Carta(String simbolo) {
-        this.simbolo = simbolo;
+    public Carta(int simbolo) {
+        this.ids = simbolo;
         this.visible = false;
         this.encontrada = false;
     }
@@ -33,8 +33,8 @@ public class Carta {
         
     }
 
-    public String getSimbolo() {
-        return simbolo;
+    public int getSimbolo() {
+        return ids;
     }
 
     public boolean isVisible() {
@@ -48,8 +48,8 @@ public class Carta {
     @Override
     public String toString() {
         if (encontrada) {
-            return "[" + simbolo + " - encontrada]";
+            return "[" + ids + " - encontrada]";
         }
-        return visible ? "[" + simbolo + "]" : "[?]";
+        return visible ? "[" + ids + "]" : "[?]";
     }  
 }
