@@ -64,7 +64,6 @@ public class Tablero {
             contador++;
         }
  
-        // Barajar las imágenes aleatoriamente
         for (int i = totalCartas - 1; i > 0; i--) {
             int j = (int) (Math.random() * (i + 1));
             String temporal = imagenes[i];
@@ -75,7 +74,7 @@ public class Tablero {
         int indice = 0;
         for (int fila = 0; fila < filas; fila++) {
             for (int columna = 0; columna < columnas; columna++) {
-                cartas[fila][columna] = new Carta(imagenes[indice]);
+                cartas[fila][columna] = new Carta(imagenes[indice % imagenes.length]);
                 indice++;
             }
         }
