@@ -22,8 +22,8 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         initComponents();
         boxNivel.setSelectedItem(Nivel.PRINCIPIANTE);
         armarTablero((Nivel) boxNivel.getSelectedItem());
-    }
-        private void armarTablero(Nivel nivelSeleccionado) {
+    }        
+    private void armarTablero(Nivel nivelSeleccionado) {
         if (nivelSeleccionado == null) {
             return;
         }
@@ -42,6 +42,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     lblPuntos.setText("Puntaje: " + juego.getPuntaje());
     lblTimer.setText("Tiempo: " + juego.getTiempoTranscurrido());
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,7 +130,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReiniciarActionPerformed
 
     private void boxNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNivelActionPerformed
-        // TODO add your handling code here:
+        armarTablero((Nivel) boxNivel.getSelectedItem());
     }//GEN-LAST:event_boxNivelActionPerformed
 
     /**
