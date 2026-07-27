@@ -5,14 +5,13 @@
 package Juego;
 
 import cartas.Nivel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author UTN
  */
 public class FrmJuegoMemoria extends javax.swing.JFrame {
-    
-    private Juego juego;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmJuegoMemoria.class.getName());
 
     /**
@@ -20,29 +19,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
      */
     public FrmJuegoMemoria() {
         initComponents();
-        boxNivel.setSelectedItem(Nivel.PRINCIPIANTE);
-        armarTablero((Nivel) boxNivel.getSelectedItem());
-    }        
-    private void armarTablero(Nivel nivelSeleccionado) {
-        if (nivelSeleccionado == null) {
-            return;
-        }
-
-        if (juego == null) {
-            juego = new Juego(nivelSeleccionado);
-        } else {
-            juego.cambiarNivel(nivelSeleccionado);
-        }
-
-        actualizarEtiquetas();
     }
-    private void actualizarEtiquetas() {
-    lblParejasEncontradas.setText("Encontradas: " + juego.getParejasEncontradas());
-    lblIntentos.setText("Intentos: " + juego.getCantidadIntentos());
-    lblPuntos.setText("Puntaje: " + juego.getPuntaje());
-    lblTimer.setText("Tiempo: " + juego.getTiempoTranscurrido());
-    }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,7 +44,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         panelTablero.setLayout(panelTableroLayout);
         panelTableroLayout.setHorizontalGroup(
             panelTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 729, Short.MAX_VALUE)
         );
         panelTableroLayout.setVerticalGroup(
             panelTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +54,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         btnReiniciar.setText("Reiniciar");
         btnReiniciar.addActionListener(this::btnReiniciarActionPerformed);
 
-        boxNivel.setModel(new javax.swing.DefaultComboBoxModel<>(cartas.Nivel.values()));
+        boxNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Avanzado" }));
         boxNivel.addActionListener(this::boxNivelActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,11 +103,21 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReiniciarActionPerformed
-        armarTablero((Nivel) boxNivel.getSelectedItem());
+        
     }//GEN-LAST:event_btnReiniciarActionPerformed
 
     private void boxNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNivelActionPerformed
-        armarTablero((Nivel) boxNivel.getSelectedItem());
+        switch(boxNivel.getSelectedIndex()){
+            case 0 -> {
+                JOptionPane.showMessageDialog(this,"Selecciono Principiante");   
+        }   
+            case 1 -> {
+                JOptionPane.showMessageDialog(this,"Selecciono Intermedio");   
+        }
+            case 2 -> {
+                JOptionPane.showMessageDialog(this,"Selecciono Avanzado");   
+        }
+        }
     }//GEN-LAST:event_boxNivelActionPerformed
 
     /**
@@ -159,7 +146,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<cartas.Nivel> boxNivel;
+    private javax.swing.JComboBox<String> boxNivel;
     private javax.swing.JButton btnReiniciar;
     private javax.swing.JLabel lblIntentos;
     private javax.swing.JLabel lblParejasEncontradas;
