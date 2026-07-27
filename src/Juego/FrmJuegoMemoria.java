@@ -4,12 +4,15 @@
  */
 package Juego;
 
+import cartas.Nivel;
+
 /**
  *
  * @author UTN
  */
 public class FrmJuegoMemoria extends javax.swing.JFrame {
     
+    private Juego juego;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmJuegoMemoria.class.getName());
 
     /**
@@ -17,6 +20,27 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
      */
     public FrmJuegoMemoria() {
         initComponents();
+        boxNivel.setSelectedItem(Nivel.PRINCIPIANTE);
+        armarTablero((Nivel) boxNivel.getSelectedItem());
+    }
+        private void armarTablero(Nivel nivelSeleccionado) {
+        if (nivelSeleccionado == null) {
+            return;
+        }
+
+        if (juego == null) {
+            juego = new Juego(nivelSeleccionado);
+        } else {
+            juego.cambiarNivel(nivelSeleccionado);
+        }
+
+        actualizarEtiquetas();
+    }
+    private void actualizarEtiquetas() {
+    lblParejasEncontradas.setText("Encontradas: " + juego.getParejasEncontradas());
+    lblIntentos.setText("Intentos: " + juego.getCantidadIntentos());
+    lblPuntos.setText("Puntaje: " + juego.getPuntaje());
+    lblTimer.setText("Tiempo: " + juego.getTiempoTranscurrido());
     }
 
     /**
@@ -32,31 +56,35 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         lblParejasEncontradas = new javax.swing.JLabel();
         lblPuntos = new javax.swing.JLabel();
         lblTimer = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        panelTablero = new javax.swing.JPanel();
         btnReiniciar = new javax.swing.JButton();
+        boxNivel = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelTableroLayout = new javax.swing.GroupLayout(panelTablero);
+        panelTablero.setLayout(panelTableroLayout);
+        panelTableroLayout.setHorizontalGroup(
+            panelTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelTableroLayout.setVerticalGroup(
+            panelTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 344, Short.MAX_VALUE)
         );
 
         btnReiniciar.setText("Reiniciar");
         btnReiniciar.addActionListener(this::btnReiniciarActionPerformed);
 
+        boxNivel.setModel(new javax.swing.DefaultComboBoxModel<>(cartas.Nivel.values()));
+        boxNivel.addActionListener(this::boxNivelActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -69,7 +97,9 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                 .addComponent(lblParejasEncontradas, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
+                .addComponent(boxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnReiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(275, 275, 275))
         );
@@ -77,7 +107,9 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnReiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnReiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -85,7 +117,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                     .addComponent(lblParejasEncontradas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -93,12 +125,12 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReiniciarActionPerformed
-        armarTablero((Nivel) comboNivel.getSelectedItem());
-        lblParejasEncontradas.setText("Encontradas: 0");
-        lblIntentos.setText("Intentos: 0");
-        lblPuntos.setText("Puntaje: 0");
-        lblTimer.setText("Tiempo: 00:00");
+        armarTablero((Nivel) boxNivel.getSelectedItem());
     }//GEN-LAST:event_btnReiniciarActionPerformed
+
+    private void boxNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxNivelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,11 +158,12 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<cartas.Nivel> boxNivel;
     private javax.swing.JButton btnReiniciar;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblIntentos;
     private javax.swing.JLabel lblParejasEncontradas;
     private javax.swing.JLabel lblPuntos;
     private javax.swing.JLabel lblTimer;
+    private javax.swing.JPanel panelTablero;
     // End of variables declaration//GEN-END:variables
 }
