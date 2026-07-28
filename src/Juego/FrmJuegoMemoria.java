@@ -92,7 +92,13 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_boxNivelActionPerformed
-
+private void mostrar(javax.swing.JInternalFrame ventana) {
+    DPnivel.removeAll();
+    DPnivel.add(ventana);
+    ventana.setSize(DPnivel.getSize());
+    ventana.setVisible(true);
+    DPnivel.repaint();
+}
     /**
      * @param args the command line arguments
      */

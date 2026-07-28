@@ -279,7 +279,7 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
         }
     }
 
-    private void actualizarTablero() {
+ private void actualizarTablero() {
         for (int i = 0; i < botones.length; i++) {
             int fila = i / COLUMNAS;
             int columna = i % COLUMNAS;
@@ -290,9 +290,9 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
             boolean estaMostrado = boton.getIcon() != null;
 
             if (debeMostrarse && !estaMostrado) {
-                GestorImagenes.voltear(boton, GestorImagenes.obtenerIcono(CARPETA_IMAGENES, carta));
+                boton.setIcon(juego.getTablero().obtenerImagen(carta));
             } else if (!debeMostrarse && estaMostrado) {
-                GestorImagenes.voltear(boton, null);
+                boton.setIcon(null);
             }
             boton.setEnabled(!carta.isEncontrada());
         }
