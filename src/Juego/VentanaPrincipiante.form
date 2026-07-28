@@ -22,12 +22,26 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="Boton1" min="-2" pref="129" max="-2" attributes="0"/>
-                          <Component id="Boton9" min="-2" pref="129" max="-2" attributes="0"/>
-                          <Component id="Boton13" min="-2" pref="129" max="-2" attributes="0"/>
-                          <Component id="Boton5" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="Boton9" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="Boton13" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="Boton5" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Boton1" min="-2" pref="129" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Boton2" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton6" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton10" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton14" min="-2" pref="129" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -37,76 +51,44 @@
                       <Component id="lblParejasEncontradas" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="Boton6" min="-2" pref="129" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Boton7" min="-2" pref="129" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="lblCantidadIntentos" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Boton2" min="-2" pref="129" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Boton3" min="-2" pref="129" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Boton4" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Component id="Boton8" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Component id="lblTiempo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Boton14" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Component id="Boton10" min="-2" pref="129" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Boton15" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Component id="Boton11" min="-2" pref="129" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Boton16" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Component id="Boton12" min="-2" pref="129" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="0" pref="92" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="lblCantidadIntentos" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                      <Component id="lblTiempo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="BotonReiniciar" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Boton3" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton7" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton11" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton15" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Boton16" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton12" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton8" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="Boton4" min="-2" pref="129" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BotonReiniciar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblTiempo" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                               <Component id="lblPuntos" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCantidadIntentos" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -114,38 +96,47 @@
                           <Component id="lblParejasEncontradas" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="BotonReiniciar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Boton1" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                          <Component id="Boton2" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                          <Component id="Boton3" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                          <Component id="Boton4" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="Boton1" min="-2" pref="89" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="Boton5" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Boton2" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="Boton3" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="Boton4" min="-2" pref="89" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="Boton6" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="Boton7" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="Boton8" min="-2" pref="89" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="Boton10" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Boton8" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                      <Component id="Boton7" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                      <Component id="Boton6" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="Boton9" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="Boton11" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="Boton12" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Boton9" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="Boton10" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
-                  <Component id="Boton11" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                  <Component id="Boton12" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Boton14" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Boton14" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="Boton13" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                  <Component id="Boton15" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
-                  <Component id="Boton16" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Boton15" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Boton16" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -161,11 +152,9 @@
     <Component class="javax.swing.JButton" name="Boton5">
     </Component>
     <Component class="javax.swing.JButton" name="Boton1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/img8/01.png"/>
-        </Property>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Boton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Boton14">
     </Component>
@@ -183,18 +172,8 @@
     <Component class="javax.swing.JButton" name="Boton6">
     </Component>
     <Component class="javax.swing.JButton" name="Boton2">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/img8/01.png"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Boton3">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/img8/02.png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Boton3ActionPerformed"/>
       </Events>
@@ -204,11 +183,6 @@
     <Component class="javax.swing.JButton" name="Boton7">
     </Component>
     <Component class="javax.swing.JButton" name="Boton4">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/img8/02.png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Boton4ActionPerformed"/>
       </Events>
@@ -222,27 +196,27 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblPuntos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Puntos Obtenidos:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BotonReiniciar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Reiniciar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblParejasEncontradas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="Parejas Encontradas:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTiempo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
+        <Property name="text" type="java.lang.String" value="Tiempo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCantidadIntentos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel4"/>
+        <Property name="text" type="java.lang.String" value="Cantidad de intentos"/>
       </Properties>
     </Component>
   </SubComponents>
