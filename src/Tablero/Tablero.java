@@ -5,6 +5,7 @@
 package Tablero;
 import cartas.Carta;
 import cartas.Nivel;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -56,7 +57,14 @@ public class Tablero {
             }
         }
     }
-
+public String obtenerRutaImagen(Carta carta) {
+    String carpeta = "img" + nivelActual.getCantidadParejas();
+    String numero = "" + carta.getSimbolo();
+    if (carta.getSimbolo() < 10) {
+        numero = "0" + numero;
+    }
+    return "/imagenes/" + carpeta + "/" + numero + ".png";
+}
     public Carta obtenerCarta(int fila, int columna) {
         return cartas[fila][columna];
     }
