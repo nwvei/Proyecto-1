@@ -26,10 +26,10 @@ public class Tablero {
         this.filas = nivel.getFilas();
         this.columnas = nivel.getColumnas();
         this.cartas = new Carta[filas][columnas];
-        distribuirParejas(nivel.getCantidadParejas());
+        DParejas(nivel.getCantidadParejas());
     }
 
-    private void distribuirParejas(int cantidadParejas) {
+    private void DParejas(int cantidadParejas) {
         int totalCartas = cantidadParejas * 2;
         int[] ids = new int[totalCartas];
         int contador = 0;
