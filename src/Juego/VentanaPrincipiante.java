@@ -5,6 +5,7 @@
 package Juego;
 
 import cartas.Carta;
+import cartas.Nivel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -19,7 +20,10 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
      */
     public VentanaPrincipiante() {
     initComponents();
+    juego = new ControladorJuego(Nivel.PRINCIPIANTE);
     inicializarArregloBotones();
+    actualizarTablero();
+    actualizarEtiquetas();
         }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
