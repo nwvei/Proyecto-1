@@ -31,7 +31,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     private void initComponents() {
 
         boxNivel = new javax.swing.JComboBox<>();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        DPnivel = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juego de Memoria");
@@ -39,14 +39,14 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         boxNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Avanzado" }));
         boxNivel.addActionListener(this::boxNivelActionPerformed);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout DPnivelLayout = new javax.swing.GroupLayout(DPnivel);
+        DPnivel.setLayout(DPnivelLayout);
+        DPnivelLayout.setHorizontalGroup(
+            DPnivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DPnivelLayout.setVerticalGroup(
+            DPnivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 387, Short.MAX_VALUE)
         );
 
@@ -60,7 +60,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                 .addGap(275, 460, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1)
+                .addComponent(DPnivel)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -69,7 +69,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(boxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane1)
+                .addComponent(DPnivel)
                 .addContainerGap())
         );
 
@@ -79,13 +79,16 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     private void boxNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNivelActionPerformed
         switch(boxNivel.getSelectedIndex()){
             case 0 -> {
-                JOptionPane.showMessageDialog(this,"Selecciono Principiante");   
+                JOptionPane.showMessageDialog(this,"Selecciono Principiante"); 
+                mostrar(new VentanaPrincipiante());
         }   
             case 1 -> {
-                JOptionPane.showMessageDialog(this,"Selecciono Intermedio");   
+                JOptionPane.showMessageDialog(this,"Selecciono Intermedio"); 
+                mostrar(new VentanaIntermedio());
         }
             case 2 -> {
-                JOptionPane.showMessageDialog(this,"Selecciono Avanzado");   
+                JOptionPane.showMessageDialog(this,"Selecciono Avanzado");  
+                mostrar(new VentanaAvanzado());
         }
         }
     }//GEN-LAST:event_boxNivelActionPerformed
@@ -116,7 +119,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane DPnivel;
     private javax.swing.JComboBox<String> boxNivel;
-    private javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
 }
