@@ -222,88 +222,89 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblPuntos;
     private javax.swing.JLabel lblTiempo;
     // End of variables declaration//GEN-END:variables
-private ControladorJuego juego;
-private javax.swing.JButton[] botones = new javax.swing.JButton[16];
-private static final int COLUMNAS = 4; // Nivel.PRINCIPIANTE.getColumnas()
+ private static final String CARPETA_IMAGENES = "img8";
+    private static final int COLUMNAS = 4; 
 
-private void inicializarArregloBotones() {
-    botones[0]  = Boton1;
-    botones[1]  = Boton2;
-    botones[2]  = Boton3;
-    botones[3]  = Boton4;
-    botones[4]  = Boton5;
-    botones[5]  = Boton6;
-    botones[6]  = Boton7;
-    botones[7]  = Boton8;
-    botones[8]  = Boton9;
-    botones[9]  = Boton10;
-    botones[10] = Boton11;
-    botones[11] = Boton12;
-    botones[12] = Boton13;
-    botones[13] = Boton14;
-    botones[14] = Boton15;
-    botones[15] = Boton16;
+    private Juego juego;
+    private javax.swing.JButton[] botones = new javax.swing.JButton[16];
 
-    for (int i = 0; i < botones.length; i++) {
-        final int indice = i; 
-        botones[i].setText("");
-        botones[i].addActionListener(evt -> manejarClicBoton(indice));
+    private void inicializarArregloBotones() {
+        botones[0]  = Boton1;
+        botones[1]  = Boton2;
+        botones[2]  = Boton3;
+        botones[3]  = Boton4;
+        botones[4]  = Boton5;
+        botones[5]  = Boton6;
+        botones[6]  = Boton7;
+        botones[7]  = Boton8;
+        botones[8]  = Boton9;
+        botones[9]  = Boton10;
+        botones[10] = Boton11;
+        botones[11] = Boton12;
+        botones[12] = Boton13;
+        botones[13] = Boton14;
+        botones[14] = Boton15;
+        botones[15] = Boton16;
+
+        for (int i = 0; i < botones.length; i++) {
+            final int indice = i;
+            botones[i].setText("");
+            botones[i].addActionListener(evt -> manejarClicBoton(indice));
+        }
+
+        BotonReiniciar.addActionListener(evt -> {
+            juego.reiniciarPartida();
+            actualizarTablero();
+            actualizarEtiquetas();
+        });
     }
 
-    BotonReiniciar.addActionListener(evt -> {
-        juego.reiniciarPartida();
+    private void manejarClicBoton(int indice) {
+        int fila = indice / COLUMNAS;
+        int columna = indice % COLUMNAS;
+
+        String resultado = juego.seleccionarCarta(fila, columna);
         actualizarTablero();
         actualizarEtiquetas();
-    });
-}
-private void manejarClicBoton(int indice) {
-    int fila = indice / COLUMNAS;
-    int columna = indice % COLUMNAS;
 
-    String resultado = juego.seleccionarCarta(fila, columna);
-    actualizarTablero();
-    actualizarEtiquetas();
-
-    if (resultado.equals("PAREJA  ENCONTRADA")) {
-        if (juego.esVictoria()) {
-            JOptionPane.showMessageDialog(this, "¡Felicidades, completaste el tablero!");
+        if (resultado.equals("PAREJA  ENCONTRADA")) {
+            if (juego.esVictoria()) {
+                JOptionPane.showMessageDialog(this, "¡Felicidades, completaste el tablero!");
+            }
+        } else if (resultado.equals("NO ES  PAREJA")) {
+            javax.swing.Timer temporizador = new javax.swing.Timer(800, evt -> {
+                juego.ocultarCartasNoEmparejadas();
+                actualizarTablero();
+            });
+            temporizador.setRepeats(false);
+            temporizador.start();
         }
-    } else if (resultado.equals("NO ES  PAREJA")) {
-        javax.swing.Timer temporizador = new javax.swing.Timer(800, evt -> {
-            juego.ocultarCartasNoEmparejadas();
-            actualizarTablero();
-        });
-        temporizador.setRepeats(false);
-        temporizador.start();
+    }
+
+    // Recorre el tablero y voltea (con animación) solo los botones que cambiaron de estado
+    private void actualizarTablero() {
+        for (int i = 0; i < botones.length; i++) {
+            int fila = i / COLUMNAS;
+            int columna = i % COLUMNAS;
+            Carta carta = juego.getTablero().obtenerCarta(fila, columna);
+            javax.swing.JButton boton = botones[i];
+
+            boolean debeMostrarse = carta.isVisible() || carta.isEncontrada();
+            boolean estaMostrado = boton.getIcon() != null;
+
+            if (debeMostrarse && !estaMostrado) {
+                GestorImagenes.voltear(boton, GestorImagenes.obtenerIcono(CARPETA_IMAGENES, carta));
+            } else if (!debeMostrarse && estaMostrado) {
+                GestorImagenes.voltear(boton, null);
+            }
+            boton.setEnabled(!carta.isEncontrada());
+        }
+    }
+
+    private void actualizarEtiquetas() {
+        lblPuntos.setText("Puntos: " + juego.getPuntaje());
+        lblCantidadIntentos.setText("Intentos: " + juego.getCantidadIntentos());
+        lblParejasEncontradas.setText("Parejas: " + juego.getParejasEncontradas() + "/" + juego.getTotalParejas());
+        lblTiempo.setText(juego.getTiempoTranscurrido());
     }
 }
-
-private void actualizarTablero() {
-    for (int i = 0; i < botones.length; i++) {
-        int fila = i / COLUMNAS;
-        int columna = i % COLUMNAS;
-        Carta carta = juego.getTablero().obtenerCarta(fila, columna);
-
-        if (carta.isVisible() || carta.isEncontrada()) {
-            botones[i].setIcon(new ImageIcon(getClass().getResource(rutaImagen(carta))));
-        } else {
-            botones[i].setIcon(null); //
-        }
-        botones[i].setEnabled(!carta.isEncontrada());
-    }
-}
-
-private String rutaImagen(Carta carta) {
-    return String.format("/imagenes/img8/%02d.png", carta.getSimbolo());
-}
-
-private void actualizarEtiquetas() {
-    lblPuntos.setText("Puntos: " + juego.getPuntaje());
-    lblCantidadIntentos.setText("Intentos: " + juego.getCantidadIntentos());
-    lblParejasEncontradas.setText("Parejas: " + juego.getParejasEncontradas() + "/" + juego.getTotalParejas());
-    lblTiempo.setText(juego.getTiempoTranscurrido());
-}
-}
-
-
-
