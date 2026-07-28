@@ -9,9 +9,9 @@ package cartas;
  * @author HP
  */
 public enum Nivel {
-    PRINCIPIANTE(16, 8, 8),
-    INTERMEDIO(32, 16, 16),
-    AVANZADO(64, 32, 32);  
+    PRINCIPIANTE(8, 4, 4),
+    INTERMEDIO(16, 4, 8),
+    AVANZADO(32, 8, 8);  
 
     private final int cantidadParejas;
     private final int filas;
