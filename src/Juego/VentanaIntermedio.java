@@ -3,12 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Juego;
+import cartas.Carta;
+import javax.swing.Timer;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author UTN
  */
 public class VentanaIntermedio extends javax.swing.JInternalFrame {
+    private Juego juego;
+
     /**
      * Creates new form VentanaIntermedio
      */
@@ -49,6 +54,13 @@ public class VentanaIntermedio extends javax.swing.JInternalFrame {
     botones[29] = btn30;
     botones[30] = btn31;
     botones[31] = btn32;
+    }
+
+    private void actualizarLabels() {
+    lblPuntos.setText("Puntos: " + juego.getPuntaje());
+    lblCantidadIntentos.setText("Intentos: " + juego.getCantidadIntentos());
+    lblParejasEncontradas.setText("Parejas: " + juego.getParejasEncontradas() + "/" + juego.getTotalParejas());
+    lblTimer.setText(juego.getTiempoTranscurrido());
 }
 
     /**
