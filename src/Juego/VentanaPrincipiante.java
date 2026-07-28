@@ -279,7 +279,6 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
         }
     }
 
-    // Recorre el tablero y voltea (con animación) solo los botones que cambiaron de estado
     private void actualizarTablero() {
         for (int i = 0; i < botones.length; i++) {
             int fila = i / COLUMNAS;

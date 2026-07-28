@@ -10,15 +10,11 @@ import javax.swing.JButton;
 import javax.swing.Timer;
 
 /**
- * Funciones reutilizables por las 3 ventanas de juego:
- * - armar la ruta de la imagen según la carpeta del nivel (img8, img16, img32)
- * - animar el botón como si "girara" al mostrar u ocultar la carta
  *
  * @author Adriel
  */
 public class GestorImagenes {
 
-    // Arma la ruta de imagen: /imagenes/img8/03.png , /imagenes/img16/12.png, etc.
     public static String rutaImagen(String carpeta, Carta carta) {
         return String.format("/imagenes/%s/%02d.png", carpeta, carta.getSimbolo());
     }
@@ -27,11 +23,6 @@ public class GestorImagenes {
         return new ImageIcon(GestorImagenes.class.getResource(rutaImagen(carpeta, carta)));
     }
 
-    /**
-     * Efecto simple de "giro": el ancho del icono actual se achica hasta
-     * casi desaparecer y luego el icono nuevo crece hasta su tamaño normal.
-     * iconoNuevo puede ser null (para dejar la carta boca abajo).
-     */
     public static void voltear(JButton boton, ImageIcon iconoNuevo) {
         ImageIcon iconoAnterior = (boton.getIcon() instanceof ImageIcon) ? (ImageIcon) boton.getIcon() : null;
         int ancho = boton.getWidth() > 20 ? boton.getWidth() - 10 : 90;
