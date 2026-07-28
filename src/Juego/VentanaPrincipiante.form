@@ -125,18 +125,16 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Boton10" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Boton9" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                      <Component id="Boton11" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                      <Component id="Boton12" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="Boton11" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Boton12" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Boton9" min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Boton14" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                  <Component id="Boton13" alignment="3" min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="Boton15" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="Boton16" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="Boton13" min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>

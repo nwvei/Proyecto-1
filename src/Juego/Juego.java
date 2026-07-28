@@ -11,15 +11,11 @@ import cronometros.Cronometro;
 import jugadores.Jugador;
 
 /**
- * Controlador genérico del juego de memoria.
- * Es el mismo para los 3 niveles (Principiante, Intermedio, Avanzado):
- * solo cambia el Nivel que se le pasa en el constructor.
- *
  * @author Adriel
  */
 public class Juego {
 
-    private Tablero tablero;
+     private Tablero tablero;
     private Jugador jugador;
     private Cronometro cronometro;
     private Nivel nivel;
