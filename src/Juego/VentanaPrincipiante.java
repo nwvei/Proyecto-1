@@ -58,13 +58,33 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
 
         Boton9.addActionListener(this::Boton9ActionPerformed);
 
+        Boton5.addActionListener(this::Boton5ActionPerformed);
+
         Boton1.addActionListener(this::Boton1ActionPerformed);
+
+        Boton14.addActionListener(this::Boton14ActionPerformed);
+
+        Boton13.addActionListener(this::Boton13ActionPerformed);
+
+        Boton15.addActionListener(this::Boton15ActionPerformed);
+
+        Boton16.addActionListener(this::Boton16ActionPerformed);
 
         Boton10.addActionListener(this::Boton10ActionPerformed);
 
+        Boton6.addActionListener(this::Boton6ActionPerformed);
+
+        Boton2.addActionListener(this::Boton2ActionPerformed);
+
         Boton3.addActionListener(this::Boton3ActionPerformed);
 
+        Boton11.addActionListener(this::Boton11ActionPerformed);
+
+        Boton7.addActionListener(this::Boton7ActionPerformed);
+
         Boton4.addActionListener(this::Boton4ActionPerformed);
+
+        Boton8.addActionListener(this::Boton8ActionPerformed);
 
         Boton12.addActionListener(this::Boton12ActionPerformed);
 
@@ -180,27 +200,27 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Boton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton9ActionPerformed
-        // TODO add your handling code here:
+     manejarClicBoton(8);
     }//GEN-LAST:event_Boton9ActionPerformed
 
     private void Boton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton4ActionPerformed
-        // TODO add your handling code here:
+        manejarClicBoton(3);
     }//GEN-LAST:event_Boton4ActionPerformed
 
     private void Boton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton10ActionPerformed
-        // TODO add your handling code here:
+    manejarClicBoton(9);
     }//GEN-LAST:event_Boton10ActionPerformed
 
     private void Boton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3ActionPerformed
-        // TODO add your handling code here:
+       manejarClicBoton(2);
     }//GEN-LAST:event_Boton3ActionPerformed
 
     private void Boton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton12ActionPerformed
-        // TODO add your handling code here:
+    manejarClicBoton(11);
     }//GEN-LAST:event_Boton12ActionPerformed
 
     private void Boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1ActionPerformed
-        // TODO add your handling code here:
+    manejarClicBoton(0);
     }//GEN-LAST:event_Boton1ActionPerformed
 
     private void BotonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonReiniciarActionPerformed
@@ -208,6 +228,46 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
             actualizarTablero();
             actualizarlabels();
     }//GEN-LAST:event_BotonReiniciarActionPerformed
+
+    private void Boton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2ActionPerformed
+         manejarClicBoton(1);
+    }//GEN-LAST:event_Boton2ActionPerformed
+
+    private void Boton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton5ActionPerformed
+      manejarClicBoton(4);
+    }//GEN-LAST:event_Boton5ActionPerformed
+
+    private void Boton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton6ActionPerformed
+      manejarClicBoton(5);
+    }//GEN-LAST:event_Boton6ActionPerformed
+
+    private void Boton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton7ActionPerformed
+    manejarClicBoton(6);
+    }//GEN-LAST:event_Boton7ActionPerformed
+
+    private void Boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton8ActionPerformed
+     manejarClicBoton(7);
+    }//GEN-LAST:event_Boton8ActionPerformed
+
+    private void Boton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton11ActionPerformed
+   manejarClicBoton(10);
+    }//GEN-LAST:event_Boton11ActionPerformed
+
+    private void Boton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton13ActionPerformed
+     manejarClicBoton(12);
+    }//GEN-LAST:event_Boton13ActionPerformed
+
+    private void Boton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton14ActionPerformed
+    manejarClicBoton(13);
+    }//GEN-LAST:event_Boton14ActionPerformed
+
+    private void Boton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton15ActionPerformed
+    manejarClicBoton(14);
+    }//GEN-LAST:event_Boton15ActionPerformed
+
+    private void Boton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton16ActionPerformed
+    manejarClicBoton(15);
+    }//GEN-LAST:event_Boton16ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -257,17 +317,10 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
         botones[13] = Boton14;
         botones[14] = Boton15;
         botones[15] = Boton16;
-
-        for (int i = 0; i < botones.length; i++) {
-            final int indice = i;
-            botones[i].setText("");
-            botones[i].addActionListener(evt -> manejarClicBoton(indice));
-        }
     }
-
     private void manejarClicBoton(int indice) {
-        int fila = indice / COLUMNAS;
-        int columna = indice % COLUMNAS;
+       int fila = indice / juego.getNivel().getColumnas();
+        int columna = indice % juego.getNivel().getColumnas();
 
         String resultado = juego.seleccionarCarta(fila, columna);
         actualizarTablero();
