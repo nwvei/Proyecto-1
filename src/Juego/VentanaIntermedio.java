@@ -4,6 +4,7 @@
  */
 package Juego;
 import cartas.Carta;
+import cartas.Nivel;
 import javax.swing.Timer;
 import javax.swing.JOptionPane;
 
@@ -13,12 +14,17 @@ import javax.swing.JOptionPane;
  */
 public class VentanaIntermedio extends javax.swing.JInternalFrame {
     private Juego juego;
-
+    private static final String CARPETA_IMAGENES = "img16";
+    private static final int COLUMNAS = 8; 
     /**
      * Creates new form VentanaIntermedio
      */
     public VentanaIntermedio() {
         initComponents();
+        juego = new Juego(Nivel.INTERMEDIO);
+        inicializarArregloBotones();
+        actualizarTablero();
+        actualizarLabels();
     }
     private javax.swing.JButton[] botones = new javax.swing.JButton[32];
     private void inicializarArregloBotones() {
@@ -54,6 +60,56 @@ public class VentanaIntermedio extends javax.swing.JInternalFrame {
     botones[29] = btn30;
     botones[30] = btn31;
     botones[31] = btn32;
+    for (int i = 0; i < botones.length; i++) {
+            final int indice = i;
+            botones[i].setText("");
+            botones[i].addActionListener(evt -> manejarClicBoton(indice));
+        }
+
+    btnReiniciar.addActionListener(evt -> {
+            juego.reiniciarPartida();
+            actualizarTablero();
+            actualizarLabels();
+        });
+    }
+    private void manejarClicBoton(int indice) {
+        int fila = indice / COLUMNAS;
+        int columna = indice % COLUMNAS;
+
+        String resultado = juego.seleccionarCarta(fila, columna);
+        actualizarTablero();
+        actualizarLabels();
+
+        if (resultado.equals("PAREJA  ENCONTRADA")) {
+            if (juego.esVictoria()) {
+                JOptionPane.showMessageDialog(this, "¡Felicidades, completaste el tablero!");
+            }
+        } else if (resultado.equals("NO ES  PAREJA")) {
+            javax.swing.Timer temporizador = new javax.swing.Timer(800, evt -> {
+                juego.ocultarCartasNoEmparejadas();
+                actualizarTablero();
+            });
+            temporizador.setRepeats(false);
+            temporizador.start();
+        }
+    }
+    private void actualizarTablero() {
+        for (int i = 0; i < botones.length; i++) {
+            int fila = i / COLUMNAS;
+            int columna = i % COLUMNAS;
+            Carta carta = juego.getTablero().obtenerCarta(fila, columna);
+            javax.swing.JButton boton = botones[i];
+
+            boolean debeMostrarse = carta.isVisible() || carta.isEncontrada();
+            boolean estaMostrado = boton.getIcon() != null;
+
+            if (debeMostrarse && !estaMostrado) {
+                boton.setIcon(juego.getTablero().obtenerImagen(carta));
+            } else if (!debeMostrarse && estaMostrado) {
+                boton.setIcon(null);
+            }
+            boton.setEnabled(!carta.isEncontrada());
+        }
     }
 
     private void actualizarLabels() {
