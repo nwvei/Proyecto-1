@@ -75,11 +75,6 @@ public String obtenerRutaImagen(Carta carta) {
     public Carta obtenerCarta(int fila, int columna) {
         return cartas[fila][columna];
     }
-    public javax.swing.ImageIcon obtenerImagen(Carta carta) {
-    String ruta = obtenerRutaImagen(carta);
-    java.net.URL url = getClass().getResource(ruta);
-    return new javax.swing.ImageIcon(url);
-}
 
 public boolean compararCartas(Carta carta1, Carta carta2) {
         return carta1.getSimbolo() == carta2.getSimbolo();
