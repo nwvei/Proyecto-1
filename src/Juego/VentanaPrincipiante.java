@@ -22,8 +22,14 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
     juego = new Juego(Nivel.PRINCIPIANTE);
     inicializarArregloBotones();
     actualizarTablero();
-    actualizarEtiquetas();
-        }
+    actualizarlabels();
+
+    timer = new javax.swing.Timer(1000, evt -> {
+        actualizarlabels();
+    });
+
+    timer.start();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -65,6 +71,7 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
         lblPuntos.setText("Puntos Obtenidos:");
 
         BotonReiniciar.setText("Reiniciar");
+        BotonReiniciar.addActionListener(this::BotonReiniciarActionPerformed);
 
         lblParejasEncontradas.setText("Parejas Encontradas:");
 
@@ -196,6 +203,12 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Boton1ActionPerformed
 
+    private void BotonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonReiniciarActionPerformed
+       juego.reiniciarPartida();
+            actualizarTablero();
+            actualizarlabels();
+    }//GEN-LAST:event_BotonReiniciarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Boton1;
@@ -220,11 +233,12 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblPuntos;
     private javax.swing.JLabel lblTiempo;
     // End of variables declaration//GEN-END:variables
- private static final String CARPETA_IMAGENES = "img8";
+
     private static final int COLUMNAS = 4; 
 
     private Juego juego;
     private javax.swing.JButton[] botones = new javax.swing.JButton[16];
+    private javax.swing.Timer timer;
 
     private void inicializarArregloBotones() {
         botones[0]  = Boton1;
@@ -249,12 +263,6 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
             botones[i].setText("");
             botones[i].addActionListener(evt -> manejarClicBoton(indice));
         }
-
-        BotonReiniciar.addActionListener(evt -> {
-            juego.reiniciarPartida();
-            actualizarTablero();
-            actualizarEtiquetas();
-        });
     }
 
     private void manejarClicBoton(int indice) {
@@ -263,7 +271,7 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
 
         String resultado = juego.seleccionarCarta(fila, columna);
         actualizarTablero();
-        actualizarEtiquetas();
+        actualizarlabels();
 
         if (resultado.equals("PAREJA  ENCONTRADA")) {
             if (juego.esVictoria()) {
@@ -298,7 +306,7 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
         }
     }
 
-    private void actualizarEtiquetas() {
+    private void actualizarlabels() {
         lblPuntos.setText("Puntos: " + juego.getPuntaje());
         lblCantidadIntentos.setText("Intentos: " + juego.getCantidadIntentos());
         lblParejasEncontradas.setText("Parejas: " + juego.getParejasEncontradas() + "/" + juego.getTotalParejas());
