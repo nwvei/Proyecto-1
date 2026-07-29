@@ -20,9 +20,8 @@ public class VentanaAvanzado extends javax.swing.JInternalFrame {
      */
     public VentanaAvanzado() {
         initComponents();
-         actualizarLabels();
-         juego = new Juego(Nivel.AVANZADO);
-         botones = new JButton[64];
+        juego = new Juego(Nivel.AVANZADO);
+        botones = new JButton[64];
         botones[0] = jButton1;
         botones[1] = jButton2;
         botones[2] = jButton3;
@@ -87,6 +86,8 @@ public class VentanaAvanzado extends javax.swing.JInternalFrame {
         botones[61] = jButton62;
         botones[62] = jButton63;
         botones[63] = jButton64;
+        
+        actualizarLabels();
     
     }
 private void actualizarLabels() {
