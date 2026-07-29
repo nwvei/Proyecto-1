@@ -35,6 +35,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juego de Memoria");
+        addWindowStateListener(this::formWindowStateChanged);
 
         boxNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Avanzado" }));
         boxNivel.addActionListener(this::boxNivelActionPerformed);
@@ -47,7 +48,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         );
         DPnivelLayout.setVerticalGroup(
             DPnivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 387, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -58,10 +59,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(boxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(275, 460, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(DPnivel)
-                .addContainerGap())
+            .addComponent(DPnivel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,8 +67,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(boxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DPnivel)
-                .addContainerGap())
+                .addComponent(DPnivel))
         );
 
         pack();
@@ -92,6 +89,10 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_boxNivelActionPerformed
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowStateChanged
 private void mostrar(javax.swing.JInternalFrame ventana) {
     DPnivel.removeAll();
     DPnivel.add(ventana);

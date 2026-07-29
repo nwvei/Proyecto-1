@@ -65,6 +65,13 @@ public String obtenerRutaImagen(Carta carta) {
     }
     return "/imagenes/" + carpeta + "/" + numero + ".png";
 }
+    public ImageIcon obtenerImagen(Carta carta) {
+    java.net.URL url = getClass().getResource(obtenerRutaImagen(carta));
+    if (url == null) {
+        return null;
+    }
+    return new ImageIcon(url);
+}
     public Carta obtenerCarta(int fila, int columna) {
         return cartas[fila][columna];
     }
