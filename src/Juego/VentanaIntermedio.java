@@ -424,7 +424,7 @@ public class VentanaIntermedio extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnReiniciarActionPerformed
 
     private void btn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn11ActionPerformed
-        manejarClicBoton(1);
+        manejarClicBoton(10);
     }//GEN-LAST:event_btn11ActionPerformed
 
     private void btn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10ActionPerformed
