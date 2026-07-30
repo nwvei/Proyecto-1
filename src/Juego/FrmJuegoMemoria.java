@@ -19,6 +19,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
      */
     public FrmJuegoMemoria() {
         initComponents();
+        setExtendedState(FrmJuegoMemoria.MAXIMIZED_BOTH);
     }
 
     /**
@@ -59,7 +60,7 @@ public class FrmJuegoMemoria extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(boxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(275, 460, Short.MAX_VALUE))
-            .addComponent(DPnivel, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(DPnivel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
