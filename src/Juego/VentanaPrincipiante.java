@@ -331,7 +331,7 @@ public class VentanaPrincipiante extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "¡Felicidades, completaste el tablero!");
             }
         } else if (resultado.equals("NO ES  PAREJA")) {
-            javax.swing.Timer temporizador = new javax.swing.Timer(800, evt -> {
+            javax.swing.Timer temporizador = new javax.swing.Timer(2000, evt -> {
                 juego.ocultarCartasNoEmparejadas();
                 actualizarTablero();
             });
